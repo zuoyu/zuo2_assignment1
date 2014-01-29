@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/addb"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="38dp"
+        android:text="Yu&apos;s counter"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <View
+    android:layout_width="fill_parent"
+    android:layout_height="1dp"
+    android:background="#ffff00" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bnew"
+        android:layout_alignLeft="@+id/name"
+        android:layout_marginBottom="54dp"
+        android:src="@android:drawable/ic_menu_send" />
+
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bnew"
+        android:layout_alignTop="@+id/imageView1"
+        android:src="@android:drawable/ic_menu_send" />
+
+    <ImageView
+        android:id="@+id/ImageView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ImageView01"
+        android:layout_toRightOf="@+id/name"
+        android:src="@android:drawable/ic_menu_send" />
+
+    <ImageView
+        android:id="@+id/ImageView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ImageView03"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/ImageView03"
+        android:src="@android:drawable/ic_menu_send" />
+
+    <ImageView
+        android:id="@+id/ImageView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/bnew"
+        android:layout_alignTop="@+id/ImageView02"
+        android:layout_marginRight="16dp"
+        android:src="@android:drawable/ic_menu_send" />
+
+    <ImageView
+        android:id="@+id/ImageView05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_alignTop="@+id/bnew"
+        android:layout_marginTop="78dp"
+        android:src="@android:drawable/ic_menu_send" />
+
+    <ImageView
+        android:id="@+id/ImageView06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bnew"
+        android:layout_alignTop="@+id/ImageView05"
+        android:src="@android:drawable/ic_menu_send" />
+
+    <ImageView
+        android:id="@+id/ImageView07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ImageView06"
+        android:layout_centerHorizontal="true"
+        android:src="@android:drawable/ic_menu_send" />
+
+    <ImageView
+        android:id="@+id/ImageView08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/ImageView07"
+        android:layout_toLeftOf="@+id/ImageView04"
+        android:src="@android:drawable/ic_menu_send" />
+
+    <ImageView
+        android:id="@+id/ImageView09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ImageView04"
+        android:layout_alignTop="@+id/ImageView08"
+        android:src="@android:drawable/ic_menu_send" />
+
+    <Button
+        android:id="@+id/bnew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="Enter the Counter" />
+
+    <Button
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ImageView06"
+        android:layout_marginTop="36dp"
+        android:layout_toRightOf="@+id/ImageView06"
+        android:text="Resoult" />
+
+</RelativeLayout>

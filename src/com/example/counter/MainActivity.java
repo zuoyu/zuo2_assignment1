@@ -35,6 +35,7 @@ public class MainActivity extends Activity
 	
 	class bresult implements OnClickListener
 	{
+		// here is the button to click to check the result list in my ResultView activity.
 		@Override
 		public void onClick(View v)
 		{
@@ -68,6 +69,7 @@ public class MainActivity extends Activity
 	
 	class counternew implements OnClickListener
 	{
+		// here is the button to click to add a counter in my NewCounter activity.
 		@Override
 		public void onClick(View v)
 		{

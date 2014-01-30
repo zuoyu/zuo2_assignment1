@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class DataSaving
 {
+	//this is the class using to put information which what I want in to Json. 
 	protected String text;
 	protected Date timestamp;
 	public DataSaving(String text, Date timestamp)

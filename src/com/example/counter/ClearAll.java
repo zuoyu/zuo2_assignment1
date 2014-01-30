@@ -3,7 +3,6 @@ package com.example.counter;
 
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,17 +13,16 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 
 import android.os.Bundle;
-import android.os.Environment;
+
 import android.app.Activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 public class ClearAll extends Activity
@@ -51,6 +49,7 @@ public class ClearAll extends Activity
 		 public void onClick(View v) 
 
         { 
+			// here is the button to click to clean all the data in my file.
 
 			String s = "";
 			ArrayList<DataSaving> mydata = new ArrayList<DataSaving>();

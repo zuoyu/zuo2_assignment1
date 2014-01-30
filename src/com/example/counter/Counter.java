@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class Counter
 {
+	// This class is using to counting my data. 
 	protected String text;
 	protected int number;
 	protected Date timestamp;

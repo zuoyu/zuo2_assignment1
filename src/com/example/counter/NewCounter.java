@@ -62,6 +62,7 @@ public class NewCounter extends Activity
 		@Override
 		public void onClick(View v)
 		{
+			// it will check the is there have same name in the data file then can tell user the result.
 			Gson gson = new Gson();
 			try{
 				FileInputStream fis = openFileInput("file.txt");
@@ -106,6 +107,7 @@ public class NewCounter extends Activity
 	
 	class buttonadd implements OnClickListener
 	{
+		//add the date when you click and your user name into the data file 
 		protected Date timestamp;
 		int countrecord = 0;
 

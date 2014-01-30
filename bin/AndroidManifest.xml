@@ -43,7 +43,7 @@
             android:label="@string/title_activity_remove_counter" >
         </activity>
         <activity
-            android:name="com.example.counter.ClearAll"
+            android:name="com.example.zuo2_counter.ClearAll"
             android:label="@string/title_activity_clear_all" >
         </activity>
         <activity
@@ -51,7 +51,7 @@
             android:label="@string/title_activity_result_view" >
         </activity>
         <activity
-            android:name="com.example.counter.Searching"
+            android:name="com.example.zuo2_counter.Searching"
             android:label="@string/title_activity_searching" >
         </activity>
         <activity

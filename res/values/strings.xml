@@ -11,5 +11,11 @@
     <string name="title_activity_remove_counter">RemoveCounter</string>
     <string name="title_activity_clear_all">ClearAll</string>
     <string name="title_activity_result_view">ResultView</string>
+    <string name="title_activity_searching">Searching</string>
+    <string name="title_activity_per_hour">PerHour</string>
+    <string name="title_activity_per_week">PerWeek</string>
+    <string name="title_activity_per_month">PerMonth</string>
+    <string name="title_activity_per_year">PerYear</string>
+    <string name="title_activity_per_day">PerDay</string>
 
 </resources>

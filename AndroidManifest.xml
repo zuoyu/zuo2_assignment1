@@ -50,6 +50,30 @@
             android:name="com.example.counter.ResultView"
             android:label="@string/title_activity_result_view" >
         </activity>
+        <activity
+            android:name="com.example.counter.Searching"
+            android:label="@string/title_activity_searching" >
+        </activity>
+        <activity
+            android:name="com.example.counter.PerHour"
+            android:label="@string/title_activity_per_hour" >
+        </activity>
+        <activity
+            android:name="com.example.counter.PerWeek"
+            android:label="@string/title_activity_per_week" >
+        </activity>
+        <activity
+            android:name="com.example.counter.PerMonth"
+            android:label="@string/title_activity_per_month" >
+        </activity>
+        <activity
+            android:name="com.example.counter.PerYear"
+            android:label="@string/title_activity_per_year" >
+        </activity>
+        <activity
+            android:name="com.example.counter.PerDay"
+            android:label="@string/title_activity_per_day" >
+        </activity>
     </application>
 
 </manifest>

@@ -24,78 +24,14 @@
         android:layout_alignParentRight="true"
         android:text="BACK" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView1"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_marginBottom="22dp"
-        android:text="Time From:"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/textNAME"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_marginBottom="23dp"
-        android:text="Search Name:"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/nameed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textNAME"
-        android:layout_alignBottom="@+id/textNAME"
-        android:layout_toRightOf="@+id/textNAME"
-        android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/fromed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:ems="10"
-        android:inputType="date" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/SEARCH"
-        android:layout_alignLeft="@+id/SEARCH"
-        android:layout_marginBottom="17dp"
-        android:text="Time To:"
-        android:textSize="20sp" />
-
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textNAME"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/editText1"
-        android:layout_marginTop="19dp" >
+        android:layout_above="@+id/SEARCH"
+        android:layout_alignLeft="@+id/SEARCH"
+        android:layout_alignParentTop="true" >
 
     </ListView>
-
-    <EditText
-        android:id="@+id/toed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_alignRight="@+id/backr"
-        android:ems="10"
-        android:inputType="date" />
 
 </RelativeLayout>

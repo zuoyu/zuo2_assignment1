@@ -13,15 +13,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/rename"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="43dp" >
+        android:layout_centerHorizontal="true" >
+
     </ListView>
 
     <Button
         android:id="@+id/rename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/remove"
+        android:layout_above="@+id/clear"
         android:layout_alignLeft="@+id/listView1"
         android:text="RENAME" />
 
@@ -29,19 +29,28 @@
         android:id="@+id/remove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/rename"
+        android:layout_alignLeft="@+id/clear"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/rename"
-        android:layout_marginBottom="54dp"
+        android:layout_alignRight="@+id/clear"
+        android:layout_marginBottom="43dp"
         android:text="REMOVE A COUNTER" />
 
     <Button
         android:id="@+id/clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/remove"
+        android:layout_alignLeft="@+id/rename"
+        android:layout_alignRight="@+id/rename"
+        android:text="CLEAR ALL" />
+
+    <Button
+        android:id="@+id/back3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/remove"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/remove"
-        android:text="CLEAR ALL" />
+        android:text="BACK" />
 
 </RelativeLayout>

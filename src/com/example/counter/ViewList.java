@@ -46,6 +46,9 @@ public class ViewList extends Activity
 		
 		final Button clearall = (Button) findViewById(R.id.clear);
 		clearall.setOnClickListener(new allclear());
+		
+		final Button rback = (Button) findViewById(R.id.back3);
+		rback.setOnClickListener(new backr());
 	}
 	
 	
@@ -59,6 +62,21 @@ public class ViewList extends Activity
 			// TODO Auto-generated method stub
 			Intent backbotton = new Intent();
 			backbotton.setClass(ViewList.this,ClearAll.class);
+			ViewList.this.startActivity(backbotton);
+		}
+		
+	}
+	
+	class backr implements OnClickListener
+	{
+
+		@Override
+		public void onClick(View v)
+		{
+
+			// TODO Auto-generated method stub
+			Intent backbotton = new Intent();
+			backbotton.setClass(ViewList.this,NewCounter.class);
 			ViewList.this.startActivity(backbotton);
 		}
 		

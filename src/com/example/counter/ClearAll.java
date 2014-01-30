@@ -42,6 +42,7 @@ public class ClearAll extends Activity
 		
 		final Button clearfile = (Button) findViewById(R.id.result);
 		clearfile.setOnClickListener(new fileclear());
+		
 	}
 	class fileclear implements OnClickListener
 	{

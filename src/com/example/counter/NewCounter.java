@@ -26,16 +26,13 @@ import android.widget.Toast;
 
 public class NewCounter extends Activity
 {
+	public int click1 = 1; 
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState)
+	public void onCreate(Bundle savedInstanceState)
 	{
-
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_counter);
-		
-		String massage = "After you enter the name please click the check button to check the duplicate. Otherwise you will mess you data";
-		Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
 		
 		final Button backm = (Button) findViewById(R.id.bbb);
 		backm.setOnClickListener(new mback());
@@ -43,17 +40,25 @@ public class NewCounter extends Activity
 		final Button listv = (Button) findViewById(R.id.delb);
 		listv.setOnClickListener(new vlist());
 				
-		final Button addbutton = (Button)findViewById(R.id.addb);
-		addbutton.setOnClickListener(new buttonadd());
+
 		
-		final Button checkbutton = (Button)findViewById(R.id.search);
+		Button checkbutton = (Button)findViewById(R.id.search);
 		checkbutton.setOnClickListener(new buttoncheck());
 		
+		Button addbutton = (Button)findViewById(R.id.addb);
+
+		
+		Button resetbutton = (Button)findViewById(R.id.reset);
+
+		addbutton.setOnClickListener(new buttonadd());
+		resetbutton.setOnClickListener(new buttonreset());
+
 	}
 	
 	class buttoncheck implements OnClickListener
 	{
 		String s = "";
+		boolean che;
 		@Override
 		public void onClick(View v)
 		{
@@ -66,18 +71,24 @@ public class NewCounter extends Activity
 				s= er.readLine();
 				Log.v("PRNT JSON",s);
 				
+				
 				while (s != null ){
 					DataSaving data = gson.fromJson(s,DataSaving.class);
 					String namej = data.getText();
 					if (namej.equals(namei)){
-						String massage = "There is a same counter's name in the record. if you want to keep adding please click add.";
-						Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
+						che = true;
 						break;	
 					}else{
-						String massage = "There is no any counter called "+namei+" in the record";
-						Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
+						che = false;
 					}
 					s= er.readLine();
+				}
+				if(che == true){
+					String massage = "There is a same counter's name in the record. if you want to keep adding please click add.";
+					Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
+				}else{
+					String massage = "There is no any counter called "+namei+" in the record";
+					Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
 				}
 			}catch (FileNotFoundException e) {
 				// TODO: handle exception
@@ -88,6 +99,7 @@ public class NewCounter extends Activity
 				// TODO: handle exception
 				e.printStackTrace();
 			}
+			click1 = 0;
 		}
 		
 	}
@@ -95,26 +107,30 @@ public class NewCounter extends Activity
 	class buttonadd implements OnClickListener
 	{
 		protected Date timestamp;
+		int countrecord = 0;
 
 		@Override
 		public void onClick(View v)
 		{
+			TextView displays = (TextView)findViewById(R.id.textView1);
+			String record = "you clicked"+countrecord+"\n";
+			displays.setText(record);
 			try{
 				timestamp = new Date(System.currentTimeMillis());
 				String emp = "";
 				Date timeD =  timestamp;
-				String time =  timestamp.toString();
 				EditText username = (EditText)findViewById(R.id.nameed);
 				String name =  username.getText().toString();
 				if (name.equals(emp)){
 					String massage = "please write a counter's name";
 					Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
 				}else{
-					TextView displays = (TextView)findViewById(R.id.display);
+					countrecord++;
+					displays = (TextView)findViewById(R.id.textView1);
 					DataSaving obj = new DataSaving(name,timeD);
 				
 				
-					String record = name + "|" + time+"\n";
+					record = "you clicked"+countrecord+"\n";
 					displays.setText(record);
 				
 					FileOutputStream fos = openFileOutput("file.txt",Context.MODE_APPEND);
@@ -137,6 +153,83 @@ public class NewCounter extends Activity
 			}
 		}
 			
+		
+	}
+	
+	class buttonreset implements OnClickListener
+	{
+		int renumber = 0;
+
+		@Override
+		public void onClick(View v)
+		{
+			
+			// TODO Auto-generated method stub
+			TextView displays = (TextView)findViewById(R.id.textView1);
+			String record = "you clicked"+renumber+"\n";
+			displays.setText(record);
+			String s = "";
+			String a = "haha";
+			ArrayList<DataSaving> mydata = new ArrayList<DataSaving>();
+			
+			EditText oldname = (EditText)findViewById(R.id.nameed);
+			String nameold =  oldname.getText().toString();
+			
+			Gson gson = new Gson();
+			try{
+				FileInputStream fis = openFileInput("file.txt");
+				BufferedReader er = new BufferedReader(new InputStreamReader(fis));
+				s= er.readLine();
+				Log.v("PRNT JSON",s);
+				
+				while (s != null ){
+					DataSaving data = gson.fromJson(s,DataSaving.class);
+					String name = data.getText();
+					if (name.equals(nameold)){
+						a = "haha";
+					}else{
+						mydata.add(data);
+					}
+					s= er.readLine();
+				}
+			}catch (FileNotFoundException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}catch (IOException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			try{
+				FileOutputStream fas = openFileOutput("file.txt",Context.MODE_PRIVATE);
+				
+				int length = mydata.size();
+				for(int i = 0; i< length;i++){
+					fas.write(gson.toJson(mydata.get(i)).getBytes());
+					fas.write("\n".getBytes());
+				}
+				if(length == 0)
+				{
+					String ggg = "";
+					fas.write(ggg.getBytes());
+					
+					String massage = "Your counter are cleaned";
+					Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
+					
+				}else{
+					String massage = "Your counter are cleaned";
+					Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
+				}
+				fas.close();
+			}catch (FileNotFoundException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 		
 	}
 	class mback implements OnClickListener

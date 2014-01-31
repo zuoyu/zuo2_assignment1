@@ -1,0 +1,13 @@
+From the UML we can see 
+MainActivity --------> NewCounter -------------->ViewList -----------> ReName
+             |                                            |----------->RemoveCounter
+             |						  |------------>ClearAll
+	     |
+             |
+             |-------->ResultView -----------> Searching ------------->PerHour
+							 |------------>PerDay
+							 |------------>PerWeek
+							 |------------>PerMonth
+DataSaving and Counter are two class to save the data into file and load the information from the file.
+it like a tree, it can go setp by setp and there are also have button to go back to their parent.                             
+

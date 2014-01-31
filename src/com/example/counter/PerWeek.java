@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.counter.Searching.weekper;
 
 public class PerWeek extends Activity
 {
@@ -225,6 +226,34 @@ public class PerWeek extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.per_week, menu);
 		return true;
+	}
+
+	/**
+	 * @uml.property  name="weekper"
+	 * @uml.associationEnd  inverse="perWeek:com.example.counter.Searching.weekper"
+	 */
+	private weekper weekper;
+
+	/**
+	 * Getter of the property <tt>weekper</tt>
+	 * @return  Returns the weekper.
+	 * @uml.property  name="weekper"
+	 */
+	public weekper getWeekper()
+	{
+
+		return weekper;
+	}
+
+	/**
+	 * Setter of the property <tt>weekper</tt>
+	 * @param weekper  The weekper to set.
+	 * @uml.property  name="weekper"
+	 */
+	public void setWeekper(weekper weekper)
+	{
+
+		this.weekper = weekper;
 	}
 
 }

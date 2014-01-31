@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.counter.MainActivity.counternew;
 
 public class NewCounter extends 
 MainActivity
@@ -324,6 +325,10 @@ MainActivity
 	 */
 	public Searching getSearching()
 	
+	
+	
+	
+	
 	{
 	
 		return searching;
@@ -338,9 +343,153 @@ MainActivity
 	 */
 	public void setSearching(Searching searching)
 	
+	
+	
+	
+	
 	{
 	
 		this.searching = searching;
+	}
+
+
+
+	/**
+	 * @uml.property  name="mainActivity"
+	 * @uml.associationEnd  inverse="newCounter:com.example.counter.MainActivity"
+	 */
+	private MainActivity mainActivity;
+
+	/**
+	 * Getter of the property <tt>mainActivity</tt>
+	 * @return  Returns the mainActivity.
+	 * @uml.property  name="mainActivity"
+	 */
+	public MainActivity getMainActivity()
+	
+	
+	
+	{
+	
+		return mainActivity;
+	}
+
+
+
+	/**
+	 * Setter of the property <tt>mainActivity</tt>
+	 * @param mainActivity  The mainActivity to set.
+	 * @uml.property  name="mainActivity"
+	 */
+	public void setMainActivity(MainActivity mainActivity)
+	
+	
+	
+	{
+	
+		this.mainActivity = mainActivity;
+	}
+
+
+
+	/**
+	 * @uml.property  name="viewList"
+	 * @uml.associationEnd  inverse="newCounter:com.example.counter.ViewList"
+	 */
+	private ViewList viewList;
+
+	/**
+	 * Getter of the property <tt>viewList</tt>
+	 * @return  Returns the viewList.
+	 * @uml.property  name="viewList"
+	 */
+	public ViewList getViewList()
+	
+	
+	{
+	
+		return viewList;
+	}
+
+
+
+	/**
+	 * Setter of the property <tt>viewList</tt>
+	 * @param viewList  The viewList to set.
+	 * @uml.property  name="viewList"
+	 */
+	public void setViewList(ViewList viewList)
+	
+	
+	{
+	
+		this.viewList = viewList;
+	}
+
+
+
+	/**
+	 * @uml.property  name="mainActivity1"
+	 * @uml.associationEnd  inverse="newCounter1:com.example.counter.MainActivity"
+	 */
+	private MainActivity mainActivity1;
+
+	/**
+	 * Getter of the property <tt>mainActivity1</tt>
+	 * @return  Returns the mainActivity1.
+	 * @uml.property  name="mainActivity1"
+	 */
+	public MainActivity getMainActivity1()
+	
+	{
+	
+		return mainActivity1;
+	}
+
+
+
+	/**
+	 * Setter of the property <tt>mainActivity1</tt>
+	 * @param mainActivity1  The mainActivity1 to set.
+	 * @uml.property  name="mainActivity1"
+	 */
+	public void setMainActivity1(MainActivity mainActivity1)
+	
+	{
+	
+		this.mainActivity1 = mainActivity1;
+	}
+
+
+
+	/**
+	 * @uml.property  name="counternew"
+	 * @uml.associationEnd  inverse="newCounter:com.example.counter.MainActivity.counternew"
+	 */
+	private counternew counternew;
+
+	/**
+	 * Getter of the property <tt>counternew</tt>
+	 * @return  Returns the counternew.
+	 * @uml.property  name="counternew"
+	 */
+	public counternew getCounternew()
+	{
+
+		return counternew;
+	}
+
+
+
+	/**
+	 * Setter of the property <tt>counternew</tt>
+	 * @param counternew  The counternew to set.
+	 * @uml.property  name="counternew"
+	 */
+	public void setCounternew(counternew counternew)
+	{
+
+		this.counternew = counternew;
 	}
 
 }

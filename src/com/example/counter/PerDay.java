@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.counter.Searching.dayper;
 
 public class PerDay extends Activity
 {
@@ -210,6 +211,38 @@ public class PerDay extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.per_day, menu);
 		return true;
+	}
+
+
+
+	/**
+	 * @uml.property  name="dayper"
+	 * @uml.associationEnd  inverse="perDay:com.example.counter.Searching.dayper"
+	 */
+	private dayper dayper;
+
+
+
+	/**
+	 * Getter of the property <tt>dayper</tt>
+	 * @return  Returns the dayper.
+	 * @uml.property  name="dayper"
+	 */
+	public dayper getDayper()
+	{
+
+		return dayper;
+	}
+
+	/**
+	 * Setter of the property <tt>dayper</tt>
+	 * @param dayper  The dayper to set.
+	 * @uml.property  name="dayper"
+	 */
+	public void setDayper(dayper dayper)
+	{
+
+		this.dayper = dayper;
 	}
 
 	

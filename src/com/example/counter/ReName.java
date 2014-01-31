@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.gson.Gson;
+import com.example.counter.ViewList.vrename;
 
 public class ReName extends Activity
 {
@@ -126,6 +127,37 @@ public class ReName extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.re_name, menu);
 		return true;
+	}
+
+
+	/**
+	 * @uml.property  name="vrename"
+	 * @uml.associationEnd  inverse="reName:com.example.counter.ViewList.vrename"
+	 */
+	private vrename vrename;
+
+
+	/**
+	 * Getter of the property <tt>vrename</tt>
+	 * @return  Returns the vrename.
+	 * @uml.property  name="vrename"
+	 */
+	public vrename getVrename()
+	{
+
+		return vrename;
+	}
+
+
+	/**
+	 * Setter of the property <tt>vrename</tt>
+	 * @param vrename  The vrename to set.
+	 * @uml.property  name="vrename"
+	 */
+	public void setVrename(vrename vrename)
+	{
+
+		this.vrename = vrename;
 	}
 
 }

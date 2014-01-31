@@ -24,6 +24,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
+import com.example.counter.ViewList.backr;
+import com.example.counter.ViewList.allclear;
 
 public class ClearAll extends Activity
 {
@@ -123,6 +125,64 @@ public class ClearAll extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.clear_all, menu);
 		return true;
+	}
+
+	/**
+	 * @uml.property  name="backr"
+	 * @uml.associationEnd  inverse="clearAll:com.example.counter.ViewList.backr"
+	 */
+	private backr backr;
+
+	/**
+	 * Getter of the property <tt>backr</tt>
+	 * @return  Returns the backr.
+	 * @uml.property  name="backr"
+	 */
+	public backr getBackr()
+	
+	{
+	
+		return backr;
+	}
+
+	/**
+	 * Setter of the property <tt>backr</tt>
+	 * @param backr  The backr to set.
+	 * @uml.property  name="backr"
+	 */
+	public void setBackr(backr backr)
+	
+	{
+	
+		this.backr = backr;
+	}
+
+	/**
+	 * @uml.property  name="allclear"
+	 * @uml.associationEnd  inverse="clearAll:com.example.counter.ViewList.allclear"
+	 */
+	private allclear allclear;
+
+	/**
+	 * Getter of the property <tt>allclear</tt>
+	 * @return  Returns the allclear.
+	 * @uml.property  name="allclear"
+	 */
+	public allclear getAllclear()
+	{
+
+		return allclear;
+	}
+
+	/**
+	 * Setter of the property <tt>allclear</tt>
+	 * @param allclear  The allclear to set.
+	 * @uml.property  name="allclear"
+	 */
+	public void setAllclear(allclear allclear)
+	{
+
+		this.allclear = allclear;
 	}
 
 }

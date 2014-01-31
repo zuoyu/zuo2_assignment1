@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.counter.MainActivity.bresult;
 
 public class ResultView extends Activity
 {
@@ -69,6 +70,34 @@ public class ResultView extends Activity
 			backbotton.setClass(ResultView.this,Searching.class);
 			ResultView.this.startActivity(backbotton);
 			
+		}
+
+		/**
+		 * @uml.property  name="searching"
+		 * @uml.associationEnd  inverse="rsearch:com.example.counter.Searching"
+		 */
+		private Searching searching;
+
+		/**
+		 * Getter of the property <tt>searching</tt>
+		 * @return  Returns the searching.
+		 * @uml.property  name="searching"
+		 */
+		public Searching getSearching()
+		{
+
+			return searching;
+		}
+
+		/**
+		 * Setter of the property <tt>searching</tt>
+		 * @param searching  The searching to set.
+		 * @uml.property  name="searching"
+		 */
+		public void setSearching(Searching searching)
+		{
+
+			this.searching = searching;
 		}
 		
 	}
@@ -199,6 +228,38 @@ public class ResultView extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.result_view, menu);
 		return true;
+	}
+
+
+	/**
+	 * @uml.property  name="bresult"
+	 * @uml.associationEnd  inverse="resultView:com.example.counter.MainActivity.bresult"
+	 */
+	private bresult bresult;
+
+
+	/**
+	 * Getter of the property <tt>bresult</tt>
+	 * @return  Returns the bresult.
+	 * @uml.property  name="bresult"
+	 */
+	public bresult getBresult()
+	
+	{
+	
+		return bresult;
+	}
+
+	/**
+	 * Setter of the property <tt>bresult</tt>
+	 * @param bresult  The bresult to set.
+	 * @uml.property  name="bresult"
+	 */
+	public void setBresult(bresult bresult)
+	
+	{
+	
+		this.bresult = bresult;
 	}
 
 }

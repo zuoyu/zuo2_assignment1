@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.counter.Searching.hourper;
 
 public class PerHour extends Activity
 {
@@ -220,6 +221,32 @@ public class PerHour extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.per_hour, menu);
 		return true;
+	}
+	/**
+	 * @uml.property  name="hourper"
+	 * @uml.associationEnd  inverse="perHour:com.example.counter.Searching.hourper"
+	 */
+	private hourper hourper;
+	/**
+	 * Getter of the property <tt>hourper</tt>
+	 * @return  Returns the hourper.
+	 * @uml.property  name="hourper"
+	 */
+	public hourper getHourper()
+	{
+
+		return hourper;
+	}
+
+	/**
+	 * Setter of the property <tt>hourper</tt>
+	 * @param hourper  The hourper to set.
+	 * @uml.property  name="hourper"
+	 */
+	public void setHourper(hourper hourper)
+	{
+
+		this.hourper = hourper;
 	}
 
 }

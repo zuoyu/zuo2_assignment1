@@ -23,6 +23,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.example.counter.ViewList.vremove;
 
 public class RemoveCounter extends Activity
 {
@@ -133,6 +134,31 @@ public class RemoveCounter extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.remove_counter, menu);
 		return true;
+	}
+	/**
+	 * @uml.property  name="vremove"
+	 * @uml.associationEnd  inverse="removeCounter:com.example.counter.ViewList.vremove"
+	 */
+	private vremove vremove;
+	/**
+	 * Getter of the property <tt>vremove</tt>
+	 * @return  Returns the vremove.
+	 * @uml.property  name="vremove"
+	 */
+	public vremove getVremove()
+	{
+
+		return vremove;
+	}
+	/**
+	 * Setter of the property <tt>vremove</tt>
+	 * @param vremove  The vremove to set.
+	 * @uml.property  name="vremove"
+	 */
+	public void setVremove(vremove vremove)
+	{
+
+		this.vremove = vremove;
 	}
 
 }

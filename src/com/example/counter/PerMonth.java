@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.counter.Searching.monthper;
 
 public class PerMonth extends Activity
 {
@@ -204,6 +205,34 @@ public class PerMonth extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.per_month, menu);
 		return true;
+	}
+
+	/**
+	 * @uml.property  name="monthper"
+	 * @uml.associationEnd  inverse="perMonth:com.example.counter.Searching.monthper"
+	 */
+	private monthper monthper;
+
+	/**
+	 * Getter of the property <tt>monthper</tt>
+	 * @return  Returns the monthper.
+	 * @uml.property  name="monthper"
+	 */
+	public monthper getMonthper()
+	{
+
+		return monthper;
+	}
+
+	/**
+	 * Setter of the property <tt>monthper</tt>
+	 * @param monthper  The monthper to set.
+	 * @uml.property  name="monthper"
+	 */
+	public void setMonthper(monthper monthper)
+	{
+
+		this.monthper = monthper;
 	}
 
 }

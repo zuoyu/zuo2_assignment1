@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.counter.ResultView.rsearch;
 
 public class Searching extends Activity
 {
@@ -72,6 +73,40 @@ public class Searching extends Activity
                 startActivity(passCname);
 			}
 		}
+
+		/**
+		 * @uml.property  name="perDay"
+		 * @uml.associationEnd  inverse="dayper:com.example.counter.PerDay"
+		 */
+		private PerDay perDay;
+
+		/**
+		 * Getter of the property <tt>perDay</tt>
+		 * @return  Returns the perDay.
+		 * @uml.property  name="perDay"
+		 */
+		public PerDay getPerDay()
+		
+		
+		
+		{
+		
+			return perDay;
+		}
+
+		/**
+		 * Setter of the property <tt>perDay</tt>
+		 * @param perDay  The perDay to set.
+		 * @uml.property  name="perDay"
+		 */
+		public void setPerDay(PerDay perDay)
+		
+		
+		
+		{
+		
+			this.perDay = perDay;
+		}
 		
 	}
 	class monthper implements OnClickListener
@@ -99,6 +134,36 @@ public class Searching extends Activity
                 passCname.putExtra("text", name);
                 startActivity(passCname);
 			}
+		}
+
+		/**
+		 * @uml.property  name="perMonth"
+		 * @uml.associationEnd  inverse="monthper:com.example.counter.PerMonth"
+		 */
+		private PerMonth perMonth;
+
+		/**
+		 * Getter of the property <tt>perMonth</tt>
+		 * @return  Returns the perMonth.
+		 * @uml.property  name="perMonth"
+		 */
+		public PerMonth getPerMonth()
+		
+		{
+		
+			return perMonth;
+		}
+
+		/**
+		 * Setter of the property <tt>perMonth</tt>
+		 * @param perMonth  The perMonth to set.
+		 * @uml.property  name="perMonth"
+		 */
+		public void setPerMonth(PerMonth perMonth)
+		
+		{
+		
+			this.perMonth = perMonth;
 		}
 		
 	}
@@ -128,6 +193,34 @@ public class Searching extends Activity
                 startActivity(passCname);
 			}
 		}
+
+		/**
+		 * @uml.property  name="perWeek"
+		 * @uml.associationEnd  inverse="weekper:com.example.counter.PerWeek"
+		 */
+		private PerWeek perWeek;
+
+		/**
+		 * Getter of the property <tt>perWeek</tt>
+		 * @return  Returns the perWeek.
+		 * @uml.property  name="perWeek"
+		 */
+		public PerWeek getPerWeek()
+		{
+
+			return perWeek;
+		}
+
+		/**
+		 * Setter of the property <tt>perWeek</tt>
+		 * @param perWeek  The perWeek to set.
+		 * @uml.property  name="perWeek"
+		 */
+		public void setPerWeek(PerWeek perWeek)
+		{
+
+			this.perWeek = perWeek;
+		}
 		
 	}
 	
@@ -156,6 +249,38 @@ public class Searching extends Activity
                 passCname.putExtra("text", name);
                 startActivity(passCname);
 			}
+		}
+
+		/**
+		 * @uml.property  name="perHour"
+		 * @uml.associationEnd  inverse="hourper:com.example.counter.PerHour"
+		 */
+		private PerHour perHour;
+
+		/**
+		 * Getter of the property <tt>perHour</tt>
+		 * @return  Returns the perHour.
+		 * @uml.property  name="perHour"
+		 */
+		public PerHour getPerHour()
+		
+		
+		{
+		
+			return perHour;
+		}
+
+		/**
+		 * Setter of the property <tt>perHour</tt>
+		 * @param perHour  The perHour to set.
+		 * @uml.property  name="perHour"
+		 */
+		public void setPerHour(PerHour perHour)
+		
+		
+		{
+		
+			this.perHour = perHour;
 		}
 		
 	}
@@ -196,8 +321,13 @@ public class Searching extends Activity
 	 * @uml.property  name="newCounter"
 	 */
 	public NewCounter getNewCounter()
+	
+	
+	
+	
+	
 	{
-
+	
 		return newCounter;
 	}
 
@@ -207,9 +337,50 @@ public class Searching extends Activity
 	 * @uml.property  name="newCounter"
 	 */
 	public void setNewCounter(NewCounter newCounter)
+	
+	
+	
+	
+	
 	{
-
+	
 		this.newCounter = newCounter;
+	}
+
+	/**
+	 * @uml.property  name="rsearch"
+	 * @uml.associationEnd  inverse="searching:com.example.counter.ResultView.rsearch"
+	 */
+	private rsearch rsearch;
+
+	/**
+	 * Getter of the property <tt>rsearch</tt>
+	 * @return  Returns the rsearch.
+	 * @uml.property  name="rsearch"
+	 */
+	public rsearch getRsearch()
+	
+	
+	
+	
+	{
+	
+		return rsearch;
+	}
+
+	/**
+	 * Setter of the property <tt>rsearch</tt>
+	 * @param rsearch  The rsearch to set.
+	 * @uml.property  name="rsearch"
+	 */
+	public void setRsearch(rsearch rsearch)
+	
+	
+	
+	
+	{
+	
+		this.rsearch = rsearch;
 	}
 
 }

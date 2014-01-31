@@ -67,6 +67,38 @@ public class ViewList extends Activity
 			backbotton.setClass(ViewList.this,ClearAll.class);
 			ViewList.this.startActivity(backbotton);
 		}
+
+		/**
+		 * @uml.property  name="clearAll"
+		 * @uml.associationEnd  inverse="allclear:com.example.counter.ClearAll"
+		 */
+		private ClearAll clearAll;
+
+		/**
+		 * Getter of the property <tt>clearAll</tt>
+		 * @return  Returns the clearAll.
+		 * @uml.property  name="clearAll"
+		 */
+		public ClearAll getClearAll()
+		
+		
+		{
+		
+			return clearAll;
+		}
+
+		/**
+		 * Setter of the property <tt>clearAll</tt>
+		 * @param clearAll  The clearAll to set.
+		 * @uml.property  name="clearAll"
+		 */
+		public void setClearAll(ClearAll clearAll)
+		
+		
+		{
+		
+			this.clearAll = clearAll;
+		}
 		
 	}
 	
@@ -81,6 +113,40 @@ public class ViewList extends Activity
 			Intent backbotton = new Intent();
 			backbotton.setClass(ViewList.this,NewCounter.class);
 			ViewList.this.startActivity(backbotton);
+		}
+
+		/**
+		 * @uml.property  name="clearAll"
+		 * @uml.associationEnd  inverse="backr:com.example.counter.ClearAll"
+		 */
+		private ClearAll clearAll;
+
+		/**
+		 * Getter of the property <tt>clearAll</tt>
+		 * @return  Returns the clearAll.
+		 * @uml.property  name="clearAll"
+		 */
+		public ClearAll getClearAll()
+		
+		
+		
+		{
+		
+			return clearAll;
+		}
+
+		/**
+		 * Setter of the property <tt>clearAll</tt>
+		 * @param clearAll  The clearAll to set.
+		 * @uml.property  name="clearAll"
+		 */
+		public void setClearAll(ClearAll clearAll)
+		
+		
+		
+		{
+		
+			this.clearAll = clearAll;
 		}
 		
 	}
@@ -97,6 +163,34 @@ public class ViewList extends Activity
 			backbotton.setClass(ViewList.this,RemoveCounter.class);
 			ViewList.this.startActivity(backbotton);
 		}
+
+		/**
+		 * @uml.property  name="removeCounter"
+		 * @uml.associationEnd  inverse="vremove:com.example.counter.RemoveCounter"
+		 */
+		private RemoveCounter removeCounter;
+
+		/**
+		 * Getter of the property <tt>removeCounter</tt>
+		 * @return  Returns the removeCounter.
+		 * @uml.property  name="removeCounter"
+		 */
+		public RemoveCounter getRemoveCounter()
+		{
+
+			return removeCounter;
+		}
+
+		/**
+		 * Setter of the property <tt>removeCounter</tt>
+		 * @param removeCounter  The removeCounter to set.
+		 * @uml.property  name="removeCounter"
+		 */
+		public void setRemoveCounter(RemoveCounter removeCounter)
+		{
+
+			this.removeCounter = removeCounter;
+		}
 		
 	}
 
@@ -112,6 +206,36 @@ public class ViewList extends Activity
 			Intent backbotton = new Intent();
 			backbotton.setClass(ViewList.this,ReName.class);
 			ViewList.this.startActivity(backbotton);
+		}
+
+		/**
+		 * @uml.property  name="reName"
+		 * @uml.associationEnd  inverse="vrename:com.example.counter.ReName"
+		 */
+		private ReName reName;
+
+		/**
+		 * Getter of the property <tt>reName</tt>
+		 * @return  Returns the reName.
+		 * @uml.property  name="reName"
+		 */
+		public ReName getReName()
+		
+		{
+		
+			return reName;
+		}
+
+		/**
+		 * Setter of the property <tt>reName</tt>
+		 * @param reName  The reName to set.
+		 * @uml.property  name="reName"
+		 */
+		public void setReName(ReName reName)
+		
+		{
+		
+			this.reName = reName;
 		}
 		
 	}
@@ -186,6 +310,42 @@ public class ViewList extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.view_list, menu);
 		return true;
+	}
+
+	/**
+	 * @uml.property  name="newCounter"
+	 * @uml.associationEnd  inverse="viewList:com.example.counter.NewCounter"
+	 */
+	private NewCounter newCounter;
+
+	/**
+	 * Getter of the property <tt>newCounter</tt>
+	 * @return  Returns the newCounter.
+	 * @uml.property  name="newCounter"
+	 */
+	public NewCounter getNewCounter()
+	
+	
+	
+	
+	{
+	
+		return newCounter;
+	}
+
+	/**
+	 * Setter of the property <tt>newCounter</tt>
+	 * @param newCounter  The newCounter to set.
+	 * @uml.property  name="newCounter"
+	 */
+	public void setNewCounter(NewCounter newCounter)
+	
+	
+	
+	
+	{
+	
+		this.newCounter = newCounter;
 	}
 
 }

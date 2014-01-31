@@ -64,6 +64,34 @@ public class MainActivity extends Activity
 			// TODO Auto-generated method stub
 			
 		}
+
+		/**
+		 * @uml.property  name="resultView"
+		 * @uml.associationEnd  inverse="bresult:com.example.counter.ResultView"
+		 */
+		private ResultView resultView;
+
+		/**
+		 * Getter of the property <tt>resultView</tt>
+		 * @return  Returns the resultView.
+		 * @uml.property  name="resultView"
+		 */
+		public ResultView getResultView()
+		{
+
+			return resultView;
+		}
+
+		/**
+		 * Setter of the property <tt>resultView</tt>
+		 * @param resultView  The resultView to set.
+		 * @uml.property  name="resultView"
+		 */
+		public void setResultView(ResultView resultView)
+		{
+
+			this.resultView = resultView;
+		}
 	}
 
 	
@@ -80,6 +108,36 @@ public class MainActivity extends Activity
 			// TODO Auto-generated method stub
 			
 		}
+
+		/**
+		 * @uml.property  name="newCounter"
+		 * @uml.associationEnd  inverse="counternew:com.example.counter.NewCounter"
+		 */
+		private NewCounter newCounter;
+
+		/**
+		 * Getter of the property <tt>newCounter</tt>
+		 * @return  Returns the newCounter.
+		 * @uml.property  name="newCounter"
+		 */
+		public NewCounter getNewCounter()
+		
+		{
+		
+			return newCounter;
+		}
+
+		/**
+		 * Setter of the property <tt>newCounter</tt>
+		 * @param newCounter  The newCounter to set.
+		 * @uml.property  name="newCounter"
+		 */
+		public void setNewCounter(NewCounter newCounter)
+		
+		{
+		
+			this.newCounter = newCounter;
+		}
 	}
 
 	@Override
@@ -89,6 +147,72 @@ public class MainActivity extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+
+	/**
+	 * @uml.property  name="newCounter"
+	 * @uml.associationEnd  inverse="mainActivity:com.example.counter.NewCounter"
+	 */
+	private NewCounter newCounter;
+
+	/**
+	 * Getter of the property <tt>newCounter</tt>
+	 * @return  Returns the newCounter.
+	 * @uml.property  name="newCounter"
+	 */
+	public NewCounter getNewCounter()
+	
+	
+	
+	{
+	
+		return newCounter;
+	}
+
+	/**
+	 * Setter of the property <tt>newCounter</tt>
+	 * @param newCounter  The newCounter to set.
+	 * @uml.property  name="newCounter"
+	 */
+	public void setNewCounter(NewCounter newCounter)
+	
+	
+	
+	{
+	
+		this.newCounter = newCounter;
+	}
+
+	/**
+	 * @uml.property  name="newCounter1"
+	 * @uml.associationEnd  inverse="mainActivity1:com.example.counter.NewCounter"
+	 */
+	private NewCounter newCounter1;
+
+	/**
+	 * Getter of the property <tt>newCounter1</tt>
+	 * @return  Returns the newCounter1.
+	 * @uml.property  name="newCounter1"
+	 */
+	public NewCounter getNewCounter1()
+	
+	
+	{
+	
+		return newCounter1;
+	}
+
+	/**
+	 * Setter of the property <tt>newCounter1</tt>
+	 * @param newCounter1  The newCounter1 to set.
+	 * @uml.property  name="newCounter1"
+	 */
+	public void setNewCounter1(NewCounter newCounter1)
+	
+	
+	{
+	
+		this.newCounter1 = newCounter1;
 	}
 
 }

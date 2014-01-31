@@ -184,4 +184,32 @@ public class Searching extends Activity
 		return true;
 	}
 
+	/**
+	 * @uml.property  name="newCounter"
+	 * @uml.associationEnd  inverse="searching:com.example.counter.NewCounter"
+	 */
+	private NewCounter newCounter;
+
+	/**
+	 * Getter of the property <tt>newCounter</tt>
+	 * @return  Returns the newCounter.
+	 * @uml.property  name="newCounter"
+	 */
+	public NewCounter getNewCounter()
+	{
+
+		return newCounter;
+	}
+
+	/**
+	 * Setter of the property <tt>newCounter</tt>
+	 * @param newCounter  The newCounter to set.
+	 * @uml.property  name="newCounter"
+	 */
+	public void setNewCounter(NewCounter newCounter)
+	{
+
+		this.newCounter = newCounter;
+	}
+
 }

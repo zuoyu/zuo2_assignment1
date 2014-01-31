@@ -24,7 +24,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class NewCounter extends Activity
+public class NewCounter extends 
+MainActivity
 {
 	public int click1 = 0; 
 
@@ -306,6 +307,40 @@ public class NewCounter extends Activity
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.new_counter, menu);
 		return true;
+	}
+
+
+
+	/**
+	 * @uml.property  name="searching"
+	 * @uml.associationEnd  inverse="newCounter:com.example.counter.Searching"
+	 */
+	private Searching searching;
+
+	/**
+	 * Getter of the property <tt>searching</tt>
+	 * @return  Returns the searching.
+	 * @uml.property  name="searching"
+	 */
+	public Searching getSearching()
+	
+	{
+	
+		return searching;
+	}
+
+
+
+	/**
+	 * Setter of the property <tt>searching</tt>
+	 * @param searching  The searching to set.
+	 * @uml.property  name="searching"
+	 */
+	public void setSearching(Searching searching)
+	
+	{
+	
+		this.searching = searching;
 	}
 
 }

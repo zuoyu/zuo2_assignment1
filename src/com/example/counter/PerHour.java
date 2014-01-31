@@ -102,6 +102,7 @@ public class PerHour extends Activity
 		ArrayList<Integer> numberrecord = new ArrayList<Integer>();
 		
 		Gson gson = new Gson();
+		// get data from the file.txt.
 		try{
 			FileInputStream fis = openFileInput("file.txt");
 			BufferedReader er = new BufferedReader(new InputStreamReader(fis));
@@ -113,13 +114,14 @@ public class PerHour extends Activity
 				DataSaving datas = gson.fromJson(ss,DataSaving.class);
 				Date time = datas.getTimestamp();
 				
+				//import Calendar, and then we can using it to get date.
 				Calendar cal = Calendar.getInstance();
 				cal.setTime(time);
-				int ssss = cal.get(Calendar.YEAR);
+				int year = cal.get(Calendar.YEAR);
 				
-				int bbb = cal.get(Calendar.MONTH);
+				int month = cal.get(Calendar.MONTH);
 				
-				int ccc = cal.get(Calendar.DAY_OF_MONTH);
+				int day = cal.get(Calendar.DAY_OF_MONTH);
 				
 				int day_r = cal.get(Calendar.HOUR);
 				
@@ -133,7 +135,7 @@ public class PerHour extends Activity
 				
 				
 				if(newName.equals(datas.getText())){
-					myIteam.add("The Hour of "+ssss+" "+monthNames[bbb]+" "+ccc+" "+day_r+" "+end+": ");
+					myIteam.add("The Hour of "+year+" "+monthNames[month]+" "+day+" "+day_r+" "+end+": ");
 				}
 				
 				ss= er.readLine();

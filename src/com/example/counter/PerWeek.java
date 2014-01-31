@@ -87,6 +87,7 @@ public class PerWeek extends Activity
 		ArrayList<Integer> numberrecord = new ArrayList<Integer>();
 		
 		Gson gson = new Gson();
+		// get data from the file.txt.
 		try{
 			FileInputStream fis = openFileInput("file.txt");
 			BufferedReader er = new BufferedReader(new InputStreamReader(fis));
@@ -99,16 +100,17 @@ public class PerWeek extends Activity
 				DataSaving datas = gson.fromJson(ss,DataSaving.class);
 				Date time = datas.getTimestamp();
 				
+				//import Calendar, and then we can using it to get date.
 				Calendar cal = Calendar.getInstance();
 				cal.setTime(time);
-				int ssss = cal.get(Calendar.YEAR);
+				int year = cal.get(Calendar.YEAR);
 				
-				int bbb = cal.get(Calendar.MONTH);
+				int month = cal.get(Calendar.MONTH);
 				
-				int ccc = cal.get(Calendar.DAY_OF_MONTH);
+				int day = cal.get(Calendar.DAY_OF_MONTH);
 				
-				int zzz = cal.get(Calendar.WEEK_OF_MONTH);
-				String orderz = orderNames[zzz-1];
+				int week = cal.get(Calendar.WEEK_OF_MONTH);
+				String order_week = orderNames[week-1];
 				
 				int day_r = cal.get(Calendar.HOUR);
 				
@@ -121,7 +123,7 @@ public class PerWeek extends Activity
 				}
 				
 				if(newName.equals(datas.getText())){
-					myIteam.add("It is The "+zzz+orderz+" Week of "+ssss+" "+monthNames[bbb]+" "+ccc+" at "+day_r+end+" you click: ");
+					myIteam.add("It is The "+week+order_week+" Week of "+year+" "+monthNames[month]+" "+day+" at "+day_r+end+" you click: ");
 				}
 				
 				ss= er.readLine();

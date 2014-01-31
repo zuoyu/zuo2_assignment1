@@ -36,8 +36,10 @@ public class ViewList extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_list);
 		
-		populateListView();
-		registerClickCallback();
+		populateListView(); // show the result in to view list.
+		
+		registerClickCallback();// able to click  the view list.
+		
 		final Button renamev = (Button) findViewById(R.id.rename);
 		renamev.setOnClickListener(new vrename());
 		
@@ -58,6 +60,7 @@ public class ViewList extends Activity
 		@Override
 		public void onClick(View v)
 		{
+			// jump to ClearAll activity
 
 			// TODO Auto-generated method stub
 			Intent backbotton = new Intent();

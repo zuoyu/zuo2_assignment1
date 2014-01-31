@@ -33,8 +33,8 @@ public class ResultView extends Activity
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_result_view);
-		populateListView();
-		registerClickCallback();
+		populateListView();// put the result into the view list. 
+		registerClickCallback(); // to able click the view list.
 		
 		final Button backr = (Button) findViewById(R.id.backr);
 		backr.setOnClickListener(new rback());
@@ -160,6 +160,7 @@ public class ResultView extends Activity
 			numberrecord.add(number_pop);
 		}
 		
+		// the bubble sort two list then can get 
 		int n = numberrecord.size();
 		boolean swapped = true;
 		while(swapped){

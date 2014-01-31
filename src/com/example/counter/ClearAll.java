@@ -54,6 +54,7 @@ public class ClearAll extends Activity
 			String s = "";
 			ArrayList<DataSaving> mydata = new ArrayList<DataSaving>();
 			Gson gson = new Gson();
+			// get data from the file.txt.
 			try{
 				FileInputStream fis = openFileInput("file.txt");
 				BufferedReader er = new BufferedReader(new InputStreamReader(fis));
@@ -101,6 +102,7 @@ public class ClearAll extends Activity
    }
 	class mback implements OnClickListener
 	{
+		// here is the button to click to go back to ViewList activity
 
 		@Override
 		public void onClick(View v)

@@ -42,7 +42,7 @@ public class RemoveCounter extends Activity
 	
 	class buttonre implements OnClickListener
 	{
-
+		//this is using the find a username and remove it.
 		@Override
 		public void onClick(View v)
 		{
@@ -54,6 +54,7 @@ public class RemoveCounter extends Activity
 			String nameold =  oldname.getText().toString();
 			
 			Gson gson = new Gson();
+			// get data from the file.txt.
 			try{
 				FileInputStream fis = openFileInput("file.txt");
 				BufferedReader er = new BufferedReader(new InputStreamReader(fis));

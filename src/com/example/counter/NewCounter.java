@@ -26,7 +26,7 @@ import android.widget.Toast;
 
 public class NewCounter extends Activity
 {
-	public int click1 = 1; 
+	public int click1 = 0; 
 
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -41,7 +41,6 @@ public class NewCounter extends Activity
 		listv.setOnClickListener(new vlist());
 				
 
-		
 		Button checkbutton = (Button)findViewById(R.id.search);
 		checkbutton.setOnClickListener(new buttoncheck());
 		
@@ -70,7 +69,6 @@ public class NewCounter extends Activity
 				EditText username = (EditText)findViewById(R.id.nameed);
 				String namei =  username.getText().toString();
 				s= er.readLine();
-				Log.v("PRNT JSON",s);
 				
 				
 				while (s != null ){
@@ -91,6 +89,7 @@ public class NewCounter extends Activity
 					String massage = "There is no any counter called "+namei+" in the record";
 					Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
 				}
+				click1 = 1;
 			}catch (FileNotFoundException e) {
 				// TODO: handle exception
 				String massage = "No record!!";
@@ -100,7 +99,6 @@ public class NewCounter extends Activity
 				// TODO: handle exception
 				e.printStackTrace();
 			}
-			click1 = 0;
 		}
 		
 	}
@@ -114,45 +112,53 @@ public class NewCounter extends Activity
 		@Override
 		public void onClick(View v)
 		{
-			TextView displays = (TextView)findViewById(R.id.textView1);
-			String record = "you clicked"+countrecord+"\n";
-			displays.setText(record);
-			try{
-				timestamp = new Date(System.currentTimeMillis());
-				String emp = "";
-				Date timeD =  timestamp;
-				EditText username = (EditText)findViewById(R.id.nameed);
-				String name =  username.getText().toString();
-				if (name.equals(emp)){
-					String massage = "please write a counter's name";
-					Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
-				}else{
-					countrecord++;
-					displays = (TextView)findViewById(R.id.textView1);
-					DataSaving obj = new DataSaving(name,timeD);
-				
-				
-					record = "you clicked"+countrecord+"\n";
-					displays.setText(record);
-				
-					FileOutputStream fos = openFileOutput("file.txt",Context.MODE_APPEND);
-				
-					Gson gson = new Gson();
-					String json =  gson.toJson(obj);
-				
-					fos.write(json.getBytes());
-					fos.write("\n".getBytes());
-					Log.v("JSON======",json);
-					fos.close();
+			if(click1 == 1){
+				TextView displays = (TextView)findViewById(R.id.textView1);
+				String record = "you clicked"+countrecord+"\n";
+				displays.setText(record);
+				try{
+					timestamp = new Date(System.currentTimeMillis());
+					String emp = "";
+					Date timeD =  timestamp;
+					EditText username = (EditText)findViewById(R.id.nameed);
+					String name =  username.getText().toString();
+					if (name.equals(emp)){
+						String massage = "please write a counter's name";
+						Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
+					}else{
+						countrecord++;
+						displays = (TextView)findViewById(R.id.textView1);
+						DataSaving obj = new DataSaving(name,timeD);
+					
+					
+						record = "you clicked"+countrecord+"\n";
+						displays.setText(record);
+					
+						FileOutputStream fos = openFileOutput("file.txt",Context.MODE_APPEND);
+					
+						Gson gson = new Gson();
+						//using Gson to save and put it in to file.txt. then next time I can just open file.txt to get my data
+						String json =  gson.toJson(obj);
+					
+						fos.write(json.getBytes());
+						fos.write("\n".getBytes());
+						Log.v("JSON======",json);
+						fos.close();
+					}
+				}catch (FileNotFoundException e){
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			}catch (FileNotFoundException e){
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				
+			}else{
+				String massage = "please check you name first";
+				Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
 			}
+			
 		}
 			
 		
@@ -167,69 +173,77 @@ public class NewCounter extends Activity
 		{
 			
 			// TODO Auto-generated method stub
-			TextView displays = (TextView)findViewById(R.id.textView1);
-			String record = "you clicked"+renumber+"\n";
-			displays.setText(record);
-			String s = "";
-			String a = "haha";
-			ArrayList<DataSaving> mydata = new ArrayList<DataSaving>();
-			
-			EditText oldname = (EditText)findViewById(R.id.nameed);
-			String nameold =  oldname.getText().toString();
-			
-			Gson gson = new Gson();
-			try{
-				FileInputStream fis = openFileInput("file.txt");
-				BufferedReader er = new BufferedReader(new InputStreamReader(fis));
-				s= er.readLine();
-				Log.v("PRNT JSON",s);
+			if(click1 == 1){
+				TextView displays = (TextView)findViewById(R.id.textView1);
+				String record = "you clicked"+renumber+"\n";
+				displays.setText(record);
+				String s = "";
+				String a = "haha";
+				ArrayList<DataSaving> mydata = new ArrayList<DataSaving>();
 				
-				while (s != null ){
-					DataSaving data = gson.fromJson(s,DataSaving.class);
-					String name = data.getText();
-					if (name.equals(nameold)){
-						a = "haha";
-					}else{
-						mydata.add(data);
-					}
+				EditText oldname = (EditText)findViewById(R.id.nameed);
+				String nameold =  oldname.getText().toString();
+				
+				Gson gson = new Gson();
+				// get data from the file.txt.
+				try{
+					FileInputStream fis = openFileInput("file.txt");
+					BufferedReader er = new BufferedReader(new InputStreamReader(fis));
 					s= er.readLine();
+					Log.v("PRNT JSON",s);
+					
+					while (s != null ){
+						DataSaving data = gson.fromJson(s,DataSaving.class);
+						String name = data.getText();
+						if (name.equals(nameold)){
+							a = "haha";
+						}else{
+							mydata.add(data);
+						}
+						s= er.readLine();
+					}
+				}catch (FileNotFoundException e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}catch (IOException e) {
+					// TODO: handle exception
+					e.printStackTrace();
 				}
-			}catch (FileNotFoundException e) {
-				// TODO: handle exception
-				e.printStackTrace();
-			}catch (IOException e) {
-				// TODO: handle exception
-				e.printStackTrace();
-			}
-			try{
-				FileOutputStream fas = openFileOutput("file.txt",Context.MODE_PRIVATE);
-				
-				int length = mydata.size();
-				for(int i = 0; i< length;i++){
-					fas.write(gson.toJson(mydata.get(i)).getBytes());
-					fas.write("\n".getBytes());
-				}
-				if(length == 0)
+				try{
+					FileOutputStream fas = openFileOutput("file.txt",Context.MODE_PRIVATE);
+					
+					int length = mydata.size();
+					for(int i = 0; i< length;i++){
+						fas.write(gson.toJson(mydata.get(i)).getBytes());
+						fas.write("\n".getBytes());
+					}
+					if(length == 0)
+					{
+						String ggg = "";
+						fas.write(ggg.getBytes());
+						
+						String massage = "Your counter are cleaned";
+						Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
+						
+					}else{
+						String massage = "Your counter are cleaned";
+						Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
+					}
+					fas.close();
+				}catch (FileNotFoundException e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}catch (IOException e)
 				{
-					String ggg = "";
-					fas.write(ggg.getBytes());
-					
-					String massage = "Your counter are cleaned";
-					Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
-					
-				}else{
-					String massage = "Your counter are cleaned";
-					Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-				fas.close();
-			}catch (FileNotFoundException e) {
-				// TODO: handle exception
-				e.printStackTrace();
-			}catch (IOException e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				
+			}else{
+				String massage = "please check you name first";
+				Toast.makeText(NewCounter.this, massage, Toast.LENGTH_LONG).show();
 			}
+			
 			
 		}
 		
